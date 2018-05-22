@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using ToDoApi.Models;
 using ToDoApi.Enums;
 using Microsoft.AspNetCore.Http;
+using System;
 
 namespace ToDoApi.Controllers
 {
@@ -32,7 +33,7 @@ namespace ToDoApi.Controllers
 
                 _toDoRepository.Insert(item);
             }
-            catch (System.Exception ex)
+            catch (Exception)
             {
                 // TODO add logger
                 return BadRequest(ErrorCodeEnum.CouldNotCreateItem.ToString());
@@ -56,7 +57,7 @@ namespace ToDoApi.Controllers
 
                 _toDoRepository.Update(item);
             }
-            catch (System.Exception ex)
+            catch (Exception)
             {
                 // TODO add logger
                 return BadRequest(ErrorCodeEnum.CouldNotUpdateItem.ToString());
@@ -77,7 +78,7 @@ namespace ToDoApi.Controllers
 
                 _toDoRepository.Delete(id);
             }
-            catch (System.Exception ex)
+            catch (Exception)
             {
                 // TODO add logger
                 return BadRequest(ErrorCodeEnum.CouldNotDeleteItem.ToString());
