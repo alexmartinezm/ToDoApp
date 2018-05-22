@@ -64,5 +64,26 @@ namespace ToDoApi.Controllers
 
             return NoContent();
         }
+
+        [HttpDelete("id")]
+        public IActionResult Delete(string id)
+        {
+            try
+            {
+                var item = _toDoRepository.Find(id);
+
+                if (item == null)
+                    return NotFound(ErrorCodeEnum.RecordNotFound.ToString());
+
+                _toDoRepository.Delete(id);
+            }
+            catch (System.Exception ex)
+            {
+                // TODO add logger
+                return BadRequest(ErrorCodeEnum.CouldNotDeleteItem.ToString());
+            }
+
+            return NoContent();
+        }
     }
 }
