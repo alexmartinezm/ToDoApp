@@ -40,5 +40,29 @@ namespace ToDoApi.Controllers
 
             return Ok(item);
         }
+
+        [HttpPut]
+        public IActionResult Modify([FromBody] ToDoItem item)
+        {
+            if (item == null || !ModelState.IsValid)
+                return BadRequest(ErrorCodeEnum.TodoItemNameAndDescriptionRequired.ToString());
+
+            try
+            {
+                var foundItem = _toDoRepository.Find(item.Id);
+
+                if (foundItem == null)
+                    return NotFound(ErrorCodeEnum.RecordNotFound.ToString());
+
+                _toDoRepository.Update(item);
+            }
+            catch (System.Exception ex)
+            {
+                // TODO add logger
+                return BadRequest(ErrorCodeEnum.CouldNotUpdateItem.ToString());
+            }
+
+            return NoContent();
+        }
     }
 }
