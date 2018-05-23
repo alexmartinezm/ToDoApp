@@ -51,5 +51,11 @@
     <Folder Include="ViewModels\" />
     <Folder Include="ViewModels\Base\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{851196D9-C7FE-4B17-8BE7-AF507F4DE1D8}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>

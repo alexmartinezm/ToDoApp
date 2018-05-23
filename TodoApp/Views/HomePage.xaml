@@ -4,6 +4,13 @@
              x:Class="TodoApp.Views.HomePage"
              Title="{Binding Title}">
 
-    <Label Text="Welcome to ToDo app."></Label>
+    <ListView  Header="{Binding ListTitle}"
+               ItemsSource="{Binding ToDoList}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ImageCell Text="{Binding Title}" ImageSource="{Binding ImageName}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
     
 </ContentPage>

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ToDoApi.Models;
+using Models.Classes;
 using ToDoApi.Services.Interfaces;
 
 namespace ToDoApi.Services
@@ -40,35 +40,30 @@ namespace ToDoApi.Services
 
         private void InitializeData()
         {
-            _toDoList = new List<ToDoItem>();
-
-            var todoItem1 = new ToDoItem
+            _toDoList = new List<ToDoItem>
             {
-                Id = "6bb8a868-dba1-4f1a-93b7-24ebce87e243",
-                Title = "Learn app development",
-                Description = "Attend Xamarin University",
-                ImageName = "learning_app.png"
+                new ToDoItem
+                {
+                    Id = "6bb8a868-dba1-4f1a-93b7-24ebce87e243",
+                    Title = "Learn app development",
+                    Description = "Attend Xamarin University",
+                    ImageName = "learning_app.png"
+                },
+                new ToDoItem
+                {
+                    Id = "b94afb54-a1cb-4313-8af3-b7511551b33b",
+                    Title = "Develop apps",
+                    Description = "Use Visual Studio",
+                    ImageName = "developing_app.png"
+                },
+                new ToDoItem
+                {
+                    Id = "ecfa6f80-3671-4911-aabe-63cc442c1ecf",
+                    Title = "Publish apps",
+                    Description = "All app stores",
+                    ImageName = "publishing_app.png"
+                }
             };
-
-            var todoItem2 = new ToDoItem
-            {
-                Id = "b94afb54-a1cb-4313-8af3-b7511551b33b",
-                Title = "Develop apps",
-                Description = "Use Visual Studio",
-                ImageName = "developing_app.png"
-            };
-
-            var todoItem3 = new ToDoItem
-            {
-                Id = "ecfa6f80-3671-4911-aabe-63cc442c1ecf",
-                Title = "Publish apps",
-                Description = "All app stores",
-                ImageName = "publishing_app.png"
-            };
-
-            _toDoList.Add(todoItem1);
-            _toDoList.Add(todoItem2);
-            _toDoList.Add(todoItem3);
         }
     }
 }

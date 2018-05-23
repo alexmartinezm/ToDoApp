@@ -4,7 +4,7 @@ namespace TodoApp.ViewModels.Base
 {
     public class ViewModelBase : BindableBase
     {
-        string _title;
+        private string _title;
 
         public string Title
         {

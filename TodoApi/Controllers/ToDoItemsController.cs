@@ -1,9 +1,9 @@
-﻿using ToDoApi.Services.Interfaces;
-using Microsoft.AspNetCore.Mvc;
-using ToDoApi.Models;
-using ToDoApi.Enums;
+﻿using System;
 using Microsoft.AspNetCore.Http;
-using System;
+using Microsoft.AspNetCore.Mvc;
+using Models.Classes;
+using ToDoApi.Enums;
+using ToDoApi.Services.Interfaces;
 
 namespace ToDoApi.Controllers
 {

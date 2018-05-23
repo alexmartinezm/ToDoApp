@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using ToDoApi.Models;
+using Models.Classes;
 
 namespace ToDoApi.Services.Interfaces
 {

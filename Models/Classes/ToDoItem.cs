@@ -1,4 +1,4 @@
-﻿namespace ToDoApi.Models
+﻿namespace Models.Classes
 {
     public class ToDoItem
     {
