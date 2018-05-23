@@ -1,29 +1,22 @@
-﻿using Xamarin.Forms;
+﻿using Prism;
+using Prism.Ioc;
 
 namespace TodoApp
 {
-    public partial class App : Application
+    public partial class App
     {
-        public App()
+        public App(IPlatformInitializer initializer = null) : base(initializer) { }
+
+        protected override void OnInitialized()
         {
             InitializeComponent();
 
             MainPage = new TodoAppPage();
         }
 
-        protected override void OnStart()
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            // Handle when your app starts
-        }
 
-        protected override void OnSleep()
-        {
-            // Handle when your app sleeps
-        }
-
-        protected override void OnResume()
-        {
-            // Handle when your app resumes
         }
     }
 }
